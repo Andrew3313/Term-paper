@@ -70,18 +70,6 @@ def addBook(books):
             c += 1
             print(f'Книга "{title}" автора "{author}" учпешно добавлена в БД')
                       
-        
-    # for _ in range(n):
-    #     author = input("Введите фамилию автора: ")
-    #     title = input("Введите название книги: ")
-    #     pages = input("Введите количество страниц: ")
-    #     newBook = {"Автор": author, "Название": title, "Число страниц": pages}
-    #     if newBook in books:
-    #         print('Такая книга уже есть')
-    #     else:
-    #         books.append(newBook)
-    #         saveDB(books)          
-        
 def searchInfo(books):
     """
     Функция подсчета числа произведений и общего числа страниц по национальностям
