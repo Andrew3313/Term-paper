@@ -1,21 +1,4 @@
 import csv
-from prettytable import PrettyTable
-
-def menu():
-    """
-    Функция показа меню и выбора его пункта
-    :return: menuItem - номер выбранного пункта
-    """
-    print(" МЕНЮ ".center(35, '-'))
-    print("1 - Просмотр всех записей в базе данных\n"
-          "2 - Добавление N записей\n"
-          "3 - Удаление записи по ключу\n"
-          "4 - Поиск необходимой информации\n"
-          "5 - Завершение работы с базой данных\n")
-
-    menuItem = int(input('Выберите пункт меню, написав его номер: '))
-    print()
-    return menuItem
 
 def getNationality(author):
     """
@@ -32,19 +15,6 @@ def getNationality(author):
     else:
         nationality += "Зарубежный"
     return nationality
-
-def dataOutput(books):
-    """
-    Функция вывода БД
-    :return: Отсутствует
-    """
-    table = PrettyTable()
-    table.field_names = ["Автор", "Название", "Число страниц"]
-    for book in books:
-        table.add_row([book['Автор'], book['Название'], book['Число страниц']])
-    print("Содержимое базы данных:")
-    print(table)
-    print()
 
 def addBook(books):
     """
