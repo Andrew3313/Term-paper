@@ -1,8 +1,16 @@
+"""
+bibliography/dataOutput.py
+Модуль, в котором реализована процедура вывода БД
+Программист: Степашкин А.А. гр.344
+Проверил: Дмитриева Т.А
+Дата написания: 07.05.2024
+"""
+
 from prettytable import PrettyTable
 
 def dataOutput(books):
     """
-    Функция вывода БД
+    Процедура вывода БД
     :return: Отсутствует
     """
     table = PrettyTable()

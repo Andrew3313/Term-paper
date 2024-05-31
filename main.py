@@ -1,6 +1,13 @@
+"""
+main.py
+Основная программа
+Программист: Степашкин А.А. гр.344
+Проверил: Дмитриева Т.А
+Дата написания: 07.05.2024
+"""
+
 import csv
-from menu import menu
-import workingWithDatabase as wwdb
+import bibliography as bbl
 
 books = []
 with open('books.csv', 'r', encoding='utf-8') as csvfile:
@@ -8,29 +15,27 @@ with open('books.csv', 'r', encoding='utf-8') as csvfile:
     for row in reader:
         books.append(row)
 
-menuItem = 0
-while menuItem != 5:
+menuItem = ''
+while menuItem != '5':
     # Выбор пункта меню
-    menuItem = menu()
-    # Цикл, если выбран неверный пункт
-    while menuItem not in range(1, 6):
-        menuItem = int(input('Такого пункта в меню нет, введите повторно номер пункта: '))
-        print()
-    # Просмотр всех записей в базе данных
-    if menuItem == 1:
-        wwdb.dataOutput(books)
+    menuItem = bbl.menu()
+    if menuItem == '1':
+        bbl.dataOutput(books)
         print()
     # Добавление N записей
-    elif menuItem == 2:
-        wwdb.addBook(books)
+    elif menuItem == '2':
+        bbl.addBook(books)
         print()
     # Удаление записи по ключу
-    elif menuItem == 3:
-        wwdb.removeBook(books)
+    elif menuItem == '3':
+        bbl.removeBook(books)
         print()
     # Поиск числа произведений и общего числа страниц русских, советских и зарубежных авторов
-    elif menuItem == 4:
-        wwdb.searchInfo(books)
+    elif menuItem == '4':
+        bbl.searchInfo(books)
         print()
-# Завершение работы программы
-print(' Работа программы завершена '.center(40, '-'))
+    # Завершение работы программы
+    elif menuItem == '5':
+        print(' Работа программы завершена '.center(40, '-'))
+    else:
+        print('Некорректный ввод, введите число от 1 до 6')    
